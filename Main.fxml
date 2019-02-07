@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane prefHeight="600.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutY="-1.0" prefHeight="600.0" prefWidth="620.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Simulation">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="584.0" prefWidth="622.0">
+                     <children>
+                        <VBox layoutY="-1.0" prefHeight="566.0" prefWidth="270.0" spacing="5.0">
+                           <children>
+                              <HBox prefHeight="130.0" prefWidth="270.0" spacing="5.0">
+                                 <children>
+                                    <Pane prefHeight="130.0" prefWidth="130.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Label layoutX="37.0" layoutY="14.0" text="Slit Type" />
+                                          <RadioButton layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="Single" />
+                                          <RadioButton layoutX="14.0" layoutY="74.0" mnemonicParsing="false" text="Double" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="10.0" layoutY="10.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Label layoutX="47.0" layoutY="14.0" text="Color" />
+                                          <RadioButton layoutX="14.0" layoutY="65.0" mnemonicParsing="false" text="Green" />
+                                          <RadioButton layoutX="14.0" layoutY="37.0" mnemonicParsing="false" text="Red" />
+                                          <RadioButton layoutX="14.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <Label layoutX="67.0" layoutY="14.0" text="Slit Separation (mm)" />
+                                    <Slider layoutX="52.0" layoutY="65.0" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="15.0" layoutY="150.0" prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <Label layoutX="82.0" layoutY="21.0" text="Slit Width (mm)" />
+                                    <Slider layoutX="60.0" layoutY="65.0" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="15.0" layoutY="285.0" prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <Label layoutX="103.0" layoutY="25.0" text="Distance" />
+                                    <Slider layoutX="60.0" layoutY="65.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="276.0" layoutY="-1.0" prefHeight="569.0" prefWidth="344.0" spacing="5.0">
+                           <children>
+                              <Pane prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" />
+                              <Pane layoutX="10.0" layoutY="222.0" prefHeight="172.0" prefWidth="344.0" style="-fx-border-color: black;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Theory">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="About">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
