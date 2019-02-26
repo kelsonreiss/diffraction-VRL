@@ -42,10 +42,8 @@ public class CircularHole extends Aperture {
 		return bessel_calculator.value(beta);
 	}
 
-
 	/**
-     * (TODO): DOUBLE CHECK THIS EQUATION
-     * (TODO: Handle magnitudes greater than 5
+     * 
      * Circular hole minima equation expressed as:  m λ L/ D
      * In this context, "minima" are the radii of the dark fringes at different orders
      */
@@ -55,4 +53,16 @@ public class CircularHole extends Aperture {
             minima[i] = (MAGNITUDES[i] * wavelength * screen_distance) / slit_size;
         }
     }
+
+    /**
+     * Helper method that calculates MAX_DIFFRACTION_ORDER maxima locations.
+     * For a single slit aperture, maxima can be calculated via the formula:
+     * x_max = L*(m+1/2)*λ/D, where m=±1, ±2 … m± MAX_DIFFRACTION_ORDER
+     */
+	@Override
+	protected void calculate_maxima() {
+		for (int i = 0; i < MAX_DIFFRACTION_ORDER; ++i){
+            maxima[i] = ((MAGNITUDES[i]+.5) * wavelength * screen_distance) / slit_size;
+        }
+	}
 }

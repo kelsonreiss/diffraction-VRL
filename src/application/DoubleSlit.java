@@ -53,6 +53,10 @@ public class DoubleSlit extends Aperture{
      */
     @Override
     protected double calculate_intensity(double angle) {
+    	// If the angle is 0, intensity should be 1.0
+    	if (Math.abs(angle) < 0.0000000001) {
+    		return 1.0;
+    	}
         return 4 * Math.pow(Math.cos(calculate_beta(angle, slit_seperation)),2)
                 * calc_sinc_squared(calculate_beta(angle, 2 * slit_size));
     }

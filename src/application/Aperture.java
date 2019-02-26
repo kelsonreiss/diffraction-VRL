@@ -69,6 +69,7 @@ public abstract class Aperture {
         for (double i = -1 * border_x_value; i <= border_x_value; i += increment) {
             diffraction_values.add(new Pair<Double, Double>(i, calculate_intensity(i)));
         }
+        System.out.print("done");
     }
 
     /**
@@ -114,4 +115,8 @@ public abstract class Aperture {
      * Implemented in subclasses as calculation varies between apertures
      */
     protected abstract void calculate_maxima();
+    
+    public ArrayList<Pair<Double, Double>> get_values(){
+    	return diffraction_values;
+    }
 }
