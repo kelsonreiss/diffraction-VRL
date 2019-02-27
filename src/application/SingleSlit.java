@@ -1,63 +1,57 @@
 package application;
 /**
- * Author: Kelson Reiss
- * Last Updated: 2/12/2019
- *
  * This class defines single slit diffraction. Receiving several user-inputted parameters,
  * it calculates the intensity profile for the diffraction.
  */
 
-import java.lang.*;
-import java.util.ArrayList;
-import javafx.util.Pair;
+public class SingleSlit extends Aperture{
 
-public class SingleSlit {
+    /**
+     * Constructor for Single Slit diffraction experiment. Must accept
+     * three inputs to determine the parameters of the experiment.
+     * @param slit_width
+     * @param wavelength
+     * @param screen_distance
+     */
+    SingleSlit(double slit_width, double wavelength, double screen_distance) {
+        super(slit_width, screen_distance, wavelength,
+                // For a Single Slit Aperture, minima values calculated by = m*λ*L/D. m here is MAX_DIFFRACTION_ORDER
+                (MAX_DIFFRACTION_ORDER * wavelength * screen_distance) / slit_width);
+    }
 
-	// Number of minima / maxima values to calculate on either side
-	// of the central maximum intensity.
-	private static final int DIFFRACTION_ORDERS = 4;
+    /**
+     * Helper method that calculates MAX_DIFFRACTION_ORDER minima locations.
+     * For a single slit aperture, minima can be calculated via the formula:
+     * x_min = m*λ*L/D, where m=±1, ±2, … m± MAX_DIFFRACTION_ORDER
+     */
+    @Override
+    protected void calculate_minima(){
+        for (int i = 0; i < MAX_DIFFRACTION_ORDER;  i++){
+            minima[i] = ((i+1) * wavelength * screen_distance) / slit_size;
+        }
+    }
 
-	// Width of slit aperture
-	private double slit_width;
+    /**
+     * Helper method that calculates MAX_DIFFRACTION_ORDER maxima locations.
+     * For a single slit aperture, maxima can be calculated via the formula:
+     * x_max = L*(m+1/2)*λ/D, where m=±1, ±2 … m± MAX_DIFFRACTION_ORDER
+     */
+    @Override
+    protected void calculate_maxima(){
+        for (int i = 0; i < MAX_DIFFRACTION_ORDER;  i++){
+            maxima[i] = (((i+1.5) * wavelength * screen_distance) / slit_size);
+        }
+    }
 
-	// Light wavelength
-	private double wavelength;
-	
-	
-	
-
-	// Distance between the object and the screen
-	private double screen_distance;
-
-	// Stores a list of pairs, with each pair being a minimum value
-	// and its corresponding intensity value. Will be double the size of
-	// DIFFRACTION_ORDERS,
-	// with the first half to the left of 0, and the second half to the right.
-	private ArrayList<Pair<Double, Double>> diffraction_values;
-
-	/**
-	 * Constructor for Single Slit diffraction experiment. Must accept three inputs
-	 * to determine the parameters of the experiment.
-	 * 
-	 * @param slit_width
-	 * @param wavelength
-	 * @param screen_distance
-	 */
-	SingleSlit(double slit_width, double wavelength, double screen_distance) {
-		this.slit_width = slit_width;
-		this.wavelength = wavelength;
-		this.screen_distance = screen_distance;
-		this.diffraction_values = new ArrayList<Pair<Double, Double>>(DIFFRACTION_ORDERS * 2);
-	}
-
-	/**
-	 * Helper method to calculate the Beta value used in the central-line profile
-	 * formula. β = (𝜋𝐷 sin θ) / λ
-	 * 
-	 * @param theta
-	 * @return
-	 */
-	private double calculate_beta(double theta) {
-		return (Math.PI * slit_width * Math.sin(theta)) / wavelength;
-	}
+    /**
+     * Helper method that calculates a light intensity for a given angle in radians,
+     * representing an x-value on the central-line intensity profile plot.
+     * Intensity is calculated by: sinc ^ 2(β) = (sin(β) / β) ^ 2
+     * @param angle
+     * @return
+     */
+    @Override
+    protected double calculate_intensity(double angle){
+        return super.calc_sinc_squared(angle);
+    }
 }
