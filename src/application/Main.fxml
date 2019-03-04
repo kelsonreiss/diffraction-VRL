@@ -21,7 +21,7 @@
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="800.0" prefWidth="800.0">
          <children>
-            <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TabPane fx:id="tabWindow" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
                 <Tab text="Simulation">
                   <content>
@@ -104,7 +104,7 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="5.0" />
                                                             <TextField fx:id="txtSeparation" layoutX="138.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="5.0" />
                                                             <Button fx:id="btSeparation" layoutX="182.0" layoutY="85.0" mnemonicParsing="false" onAction="#separationChangedText" text="OK" />
                                                          </children>
@@ -136,8 +136,8 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slDistance" layoutX="12.0" layoutY="123.0" majorTickUnit="0.1" max="1.0" min="0.5" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="0.75" />
-                                                            <TextField fx:id="txtDistance" layoutX="140.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="0.75" />
+                                                            <Slider fx:id="slDistance" layoutX="12.0" layoutY="123.0" majorTickUnit="0.1" max="1.0" min="0.5" minorTickCount="0" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="0.7" />
+                                                            <TextField fx:id="txtDistance" layoutX="140.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="0.7" />
                                                             <Button fx:id="btDistance" layoutX="184.0" layoutY="85.0" mnemonicParsing="false" onAction="#distanceChangedText" text="OK" />
                                                          </children>
                                                       </Pane>
@@ -154,20 +154,24 @@
                                        <children>
                                           <VBox prefHeight="759.0" prefWidth="443.0" spacing="5.0">
                                              <children>
-                                                <Pane prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
-                                                <Pane layoutX="10.0" layoutY="10.0" prefHeight="365.0" prefWidth="433.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                                                <Pane fx:id="apertureWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="433.0" style="-fx-border-color: black;" />
+                                                <Pane layoutX="10.0" layoutY="10.0" prefHeight="365.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
                                                    <children>
-                                                      <LineChart fx:id="chtIntensity" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="-1.0" prefHeight="351.0" prefWidth="433.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
-                                                        <xAxis>
-                                                          <NumberAxis fx:id="chtX" prefHeight="0.0" prefWidth="305.0" side="BOTTOM" tickLabelsVisible="false" />
-                                                        </xAxis>
-                                                        <yAxis>
-                                                          <NumberAxis fx:id="chtY" minorTickVisible="false" prefHeight="140.0" prefWidth="0.0" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
-                                                        </yAxis>
-                                                      </LineChart>
+                                                      <AnchorPane layoutX="-1.0" prefHeight="436.0" prefWidth="433.0">
+                                                         <children>
+                                                            <LineChart fx:id="chtIntensity" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="433.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <xAxis>
+                                                                <NumberAxis fx:id="chtX" prefHeight="0.0" prefWidth="305.0" side="BOTTOM" tickLabelsVisible="false" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                <NumberAxis fx:id="chtY" minorTickVisible="false" prefHeight="140.0" prefWidth="0.0" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                                                              </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="10.0" layoutY="222.0" prefHeight="180.0" prefWidth="433.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
+                                                <Pane fx:id="dPatternWindow" layoutX="10.0" layoutY="222.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
                                              </children>
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -193,6 +197,30 @@
                   </Tab>
               </tabs>
             </TabPane>
+            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;">
+               <children>
+                  <Label layoutX="259.0" layoutY="199.0" text="Welcome" textFill="#fcfafa">
+                     <font>
+                        <Font name="Arial Bold Italic" size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="207.0" layoutY="282.0" text="to Nolan and Kelson's" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="44.0" layoutY="371.0" text="Diffraction Simulator" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="72.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="startButton" layoutX="321.0" layoutY="524.0" mnemonicParsing="false" onAction="#start" text="Get Started">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>
