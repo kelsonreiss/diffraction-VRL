@@ -187,41 +187,115 @@
                 </Tab>
                 <Tab text="Theory">
                   <content>
-                    <AnchorPane prefHeight="800.0" prefWidth="800.0" />
+                    <AnchorPane prefHeight="800.0" prefWidth="800.0">
+                           <children>
+                              <Label layoutX="6.0" layoutY="111.0" prefHeight="493.0" prefWidth="793.0" text="EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY " textOverrun="CLIP" wrapText="true" />
+                              <Label layoutX="180.0" layoutY="36.0" text="What is diffraction?">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
                   </content>
                 </Tab>
                   <Tab text="About">
                     <content>
-                      <AnchorPane />
+                      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="800.0">
+                           <children>
+                              <Pane fx:id="welcomeScreen1" prefHeight="767.0" prefWidth="800.0" style="-fx-background-color: blue;">
+                                 <children>
+                                    <Label layoutX="85.0" layoutY="209.0" text="Nolan Murphy" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="106.0" text="Diffraction Simulator" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="72.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="249.0" layoutY="731.0" text="SLU Spring 2019 Software Engineering" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="71.0" layoutY="251.0" text="nolan.murphy@slu.edu" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="476.0" layoutY="251.0" text="kelson.reiss@slu.edu" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="486.0" layoutY="209.0" text="Kelson Reiss" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="319.0" layoutY="370.0" text="Version 1" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="425.0" prefHeight="27.0" prefWidth="270.0" text="Released March 4, 2019" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
               </tabs>
             </TabPane>
-            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;">
+            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;" visible="false">
                <children>
-                  <Label layoutX="259.0" layoutY="199.0" text="Welcome" textFill="#fcfafa">
-                     <font>
-                        <Font name="Arial Bold Italic" size="64.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="207.0" layoutY="282.0" text="to Nolan and Kelson's" textFill="WHITE">
+                  <Label layoutX="85.0" layoutY="209.0" text="Nolan Murphy" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold Italic" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="371.0" text="Diffraction Simulator" textFill="WHITE">
+                  <Label layoutX="39.0" layoutY="106.0" text="Diffraction Simulator" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold Italic" size="72.0" />
                      </font>
                   </Label>
-                  <Button fx:id="startButton" layoutX="321.0" layoutY="524.0" mnemonicParsing="false" onAction="#start" text="Get Started">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="205.0" layoutY="752.0" text="Spring 2019 Software Engineering at SLU Madrid" textFill="WHITE">
+                  <Label layoutX="249.0" layoutY="731.0" text="SLU Spring 2019 Software Engineering" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="251.0" text="nolan.murphy@slu.edu" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="476.0" layoutY="251.0" text="kelson.reiss@slu.edu" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="486.0" layoutY="209.0" text="Kelson Reiss" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="319.0" layoutY="370.0" text="Version 1" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="startButton" layoutX="294.0" layoutY="543.0" mnemonicParsing="false" onAction="#start" text="Get Started">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="270.0" layoutY="425.0" prefHeight="27.0" prefWidth="270.0" text="Released March 4, 2019" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold Italic" size="24.0" />
                      </font>
                   </Label>
                </children>
