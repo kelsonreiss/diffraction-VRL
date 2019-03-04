@@ -112,7 +112,8 @@ public class VisualAperture {
 			line.setStroke(Color.rgb(r, g, b, current.getValue()));
 			parentContainer.getChildren().add(line);
 			
-		}
+			
+		} 
 	}
 	
 	

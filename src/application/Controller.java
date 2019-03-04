@@ -28,8 +28,8 @@ public class Controller {
 	private LineChart<Number, Number> chtIntensity;
 	@FXML
 	private TextField txtSeparation, txtWidth, txtDistance;
-		@FXML
-	private Pane apertureWindow, dPatternWindow, welcomeScreen;
+	@FXML
+	private Pane apertureWindow, dPatternWindow, welcomeScreen, intensityWindow;
 	@FXML
 	private TabPane tabWindow;
 	
@@ -57,7 +57,7 @@ public class Controller {
 	
 
 	private String selectedColor, slitType;
-	private double selectedSeparation, selectedWidth, selectedDistance, selectedWavelength;
+	private double selectedSeparation, selectedWidth, selectedDistance, selectedWavelength, convertedWidth, convertedSeparation, convertedWavelength;
 	private int txtChangeType;
 	
 	private DecimalFormat df = new DecimalFormat(".#");
@@ -73,15 +73,19 @@ public class Controller {
 	final double WAV_INIT = 700;
 	final double DIS_INIT = 0.7;
 	final int SLIT_INIT = 1;
+	final String COL_INIT = "red";
 	
 	@FXML
 	protected void start(ActionEvent e) {
 		selectedWidth = WID_INIT;
 		selectedWavelength = WAV_INIT;
 		selectedDistance = DIS_INIT;
+		selectedColor = COL_INIT;
 		
-		// (TODO): Should this be wrapped with an if-else statement to determine which aperture to use?
-		Aperture apertureInUse = new SingleSlit(selectedWidth, selectedWavelength, selectedDistance);
+		convertedWidth = selectedWidth * 0.001;
+		convertedWavelength = selectedWavelength * 0.000000001;
+		
+		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
@@ -107,7 +111,8 @@ public class Controller {
 
 	
 	protected void separationChangedSlider() {
-		selectedSeparation = slSeparation.getValue();
+		selectedSeparation = slSeparation.getValue() * 0.001;
+		convertedSeparation = 0.001;
 		txtSeparation.setText(df.format(selectedSeparation));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
@@ -120,6 +125,7 @@ public class Controller {
 		String tempSeparation = txtSeparation.getText();
 		if (inputValidator(tempSeparation, txtChangeType)) {
 			selectedSeparation = Double.valueOf(tempSeparation);
+			convertedSeparation = selectedSeparation * 0.001;
 			slSeparation.setValue(selectedSeparation);
 			simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
 		}
@@ -130,6 +136,8 @@ public class Controller {
 	
 	protected void widthChangedSlider() {
 		selectedWidth = slWidth.getValue();
+		convertedWidth = selectedWidth * 0.001;
+		
 		txtWidth.setText(df.format(selectedWidth));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
@@ -142,6 +150,7 @@ public class Controller {
 		String tempWidth = txtWidth.getText();
 		if (inputValidator(tempWidth, txtChangeType)) {
 			selectedWidth = Double.valueOf(tempWidth);
+			convertedWidth = selectedWidth * 0.001;
 			slWidth.setValue(selectedWidth);
 			simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
 		}
@@ -177,12 +186,11 @@ public class Controller {
 	protected void drawGraphs() {
 		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
 		apertureGraph = new VisualAperture(apertureWindow, diff_values);
-		
 		// Create and retrieve intensity profile plot
-		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(diff_values);
-		chtIntensity = test_drawer.get_profile();
+		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(diff_values, chtIntensity, chtX, chtY);
+		//chtIntensity = test_drawer.get_profile();
 		
-		// If first time generating diffraction pattern, create new drawer
+//		// If first time generating diffraction pattern, create new drawer
 		if (dPatternDrawer == null) {
 			dPatternDrawer = new DiffractionPatternDrawer(dPatternWindow, selectedColor, diff_values);
 		} else {
@@ -227,10 +235,10 @@ public class Controller {
 		
 		// Temporary code to test visual appearance of IntensityProfile
 		// Will be replaced with aperture values 
-		Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
+		/*Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
 		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
 		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
-		chtIntensity = test_drawer.get_profile();
+		chtIntensity = test_drawer.get_profile();*/
 	}
 	
 	/*
