@@ -28,7 +28,6 @@ public class Controller {
 	private LineChart<Number, Number> chtIntensity;
 	@FXML
 	private TextField txtSeparation, txtWidth, txtDistance;
-	
 	@FXML
 	private Pane apertureWindow, dPatternWindow, welcomeScreen, intensityWindow;
 	@FXML
@@ -89,7 +88,6 @@ public class Controller {
 		convertedWavelength = selectedWavelength * 0.000000001;
 		
 		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
-		// (TODO): Should this be wrapped with an if-else statement to determine which aperture to use?
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
@@ -231,7 +229,6 @@ public class Controller {
 		}
 		return false;
 	}
-	
 	/*
 	 * Updates the simulation including aperture, intensity graph, and diffraction pattern
 	 * 

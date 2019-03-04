@@ -25,7 +25,6 @@ public class IntensityProfileDrawer {
 	 * @param diffraction_values ArrayList of pairs, with each x value representing 
 	 * an angular location in radians and each y value is the intensity value
 	 */
-
 	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values, Pane parent) {
 		parent.getChildren().clear();
 		lineChart = new LineChart<Number, Number>(xAxis, yAxis);
