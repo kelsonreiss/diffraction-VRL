@@ -20,6 +20,7 @@ public class CircularHole extends Aperture {
         super(diameter, screen_distance, wavelenth,
                 // Max minima value is given by m*λ*L/D)
                 (MAGNITUDES[MAX_DIFFRACTION_ORDER] * wavelenth * screen_distance) / diameter);
+        fill_diffraction_values();
     }
 
 
