@@ -1,11 +1,13 @@
 package application;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.util.Pair;
 import javafx.scene.*;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -32,6 +34,8 @@ public class Controller {
 	private TabPane tabWindow;
 	
 	private VisualAperture apertureGraph;
+	
+	private Aperture apertureInUse;
 
 	
 	@FXML
@@ -55,7 +59,7 @@ public class Controller {
 	
 
 	private String selectedColor, slitType;
-	private double selectedSeparation, selectedWidth, selectedDistance;
+	private double selectedSeparation, selectedWidth, selectedDistance, selectedWavelength;
 	private int txtChangeType;
 	
 	private DecimalFormat df = new DecimalFormat(".#");
@@ -67,8 +71,17 @@ public class Controller {
 	final double DIS_MAX = 1;
 	final double DIS_MIN = 0.5;
 	
+	final double WID_INIT = 1.5;
+	final double WAV_INIT = 700;
+	final double DIS_INIT = 0.7;
+	final int SLIT_INIT = 1;
+	
 	@FXML
 	protected void start(ActionEvent e) {
+		selectedWidth = WID_INIT;
+		selectedWavelength = WAV_INIT;
+		selectedDistance = DIS_INIT;
+		Aperture apertureInUse = new SingleSlit(selectedWidth, selectedWavelength, selectedDistance);
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
@@ -161,7 +174,8 @@ public class Controller {
 	}
 	
 	protected void drawGraphs() {
-		apertureGraph = new VisualAperture(apertureWindow);
+		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
+		apertureGraph = new VisualAperture(apertureWindow, diff_values);
 	}
 	
 	protected boolean inputValidator(String input, int valueType) {
