@@ -37,6 +37,8 @@ public class Controller {
 	
 	private DiffractionPatternDrawer dPatternDrawer;
 	
+	private IntensityProfileDrawer intensityPlotDrawer;
+	
 	private Aperture apertureInUse;
 	
 	@FXML
@@ -186,9 +188,9 @@ public class Controller {
 	protected void drawGraphs() {
 		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
 		apertureGraph = new VisualAperture(apertureWindow, diff_values);
+		
 		// Create and retrieve intensity profile plot
-		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(diff_values, chtIntensity, chtX, chtY);
-		//chtIntensity = test_drawer.get_profile();
+		intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow);
 		
 //		// If first time generating diffraction pattern, create new drawer
 		if (dPatternDrawer == null) {
@@ -227,20 +229,6 @@ public class Controller {
 		}
 		return false;
 	}
-	
-	/*
-	 * Populates the intensity graph
-	 */
-	protected void populateIntensity() {
-		
-		// Temporary code to test visual appearance of IntensityProfile
-		// Will be replaced with aperture values 
-		/*Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
-		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
-		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
-		chtIntensity = test_drawer.get_profile();*/
-	}
-	
 	/*
 	 * Updates the simulation including aperture, intensity graph, and diffraction pattern
 	 * 
