@@ -1,10 +1,12 @@
 package application;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.util.Pair;
 import javafx.scene.*;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -176,6 +178,12 @@ public class Controller {
 	 */
 	protected void populateIntensity() {
 		
+		// Temporary code to test visual appearance of IntensityProfile
+		// Will be replaced with aperture values 
+		Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
+		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
+		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
+		chtIntensity = test_drawer.get_profile();
 	}
 	
 	/*
