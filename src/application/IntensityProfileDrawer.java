@@ -15,18 +15,22 @@ import javafx.util.Pair;
 public class IntensityProfileDrawer {
 	
 	// Help with method from: https://stackoverflow.com/questions/50869447/javafx-line-chart-using-arrays
-	final NumberAxis xAxis = new NumberAxis();
-	final NumberAxis yAxis = new NumberAxis();
-	final LineChart<Number, Number> lineChart;
+	private NumberAxis xAxis;
+	private NumberAxis yAxis;
+	private LineChart<Number, Number> lineChart;
 	
 	/**
 	 * Mandatory constructor for IntensityProfile Drawer
 	 * @param diffraction_values ArrayList of pairs, with each x value representing 
 	 * an angular location in radians and each y value is the intensity value
 	 */
-	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values) {
-		lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-		XYChart.Series series = new XYChart.Series<>();
+	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values, LineChart chtIntensity, NumberAxis chtX, NumberAxis chtY) {
+		
+		lineChart = chtIntensity;
+		xAxis = chtX;
+		yAxis = chtY;
+		lineChart.getData().clear();
+		XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
 		series.setName("data");
 		
 		// Add a data point into the series for every value in diffraction values
@@ -38,8 +42,8 @@ public class IntensityProfileDrawer {
 		lineChart.setCreateSymbols(false);
 	}
 	
-	public LineChart<Number, Number> get_profile(){
+	/*public LineChart<Number, Number> get_profile(){
 		return lineChart;
-	}
+	}*/
 	
 }
