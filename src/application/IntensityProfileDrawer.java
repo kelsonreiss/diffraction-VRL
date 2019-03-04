@@ -41,7 +41,6 @@ public class IntensityProfileDrawer {
 													diffraction_values.get(i).getValue()));
 		}
 		lineChart.getData().add(series);
-		
 		lineChart.setCreateSymbols(false);
 		
 		parent.getChildren().add(lineChart);
