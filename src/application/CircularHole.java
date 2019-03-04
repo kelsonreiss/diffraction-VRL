@@ -17,7 +17,7 @@ public class CircularHole extends Aperture {
      * @param screen_distance
      */
     public CircularHole(double diameter, double wavelenth, double screen_distance){
-        super(diameter, wavelenth, screen_distance,
+        super(diameter, screen_distance, wavelenth,
                 // Max minima value is given by m*λ*L/D)
                 (MAGNITUDES[MAX_DIFFRACTION_ORDER] * wavelenth * screen_distance) / diameter);
     }
@@ -39,7 +39,8 @@ public class CircularHole extends Aperture {
 
     private double calculate_bessel(double beta) {
 		BesselJ bessel_calculator = new BesselJ(1);
-		return bessel_calculator.value(beta);
+		// Call Bessel function on absolute value of beta 
+		return bessel_calculator.value(Math.abs(beta));
 	}
 
 	/**
