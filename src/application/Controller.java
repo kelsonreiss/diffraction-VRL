@@ -60,7 +60,7 @@ public class Controller {
 	private double selectedSeparation, selectedWidth, selectedDistance, selectedWavelength, convertedWidth, convertedSeparation, convertedWavelength;
 	private int txtChangeType;
 	
-	private DecimalFormat df = new DecimalFormat(".#");
+	private DecimalFormat df = new DecimalFormat("#.#");
 	
 	final double SEP_MAX = 10;
 	final double SEP_MIN = 0;
@@ -111,8 +111,8 @@ public class Controller {
 
 	
 	protected void separationChangedSlider() {
-		selectedSeparation = slSeparation.getValue() * 0.001;
-		convertedSeparation = 0.001;
+		selectedSeparation = slSeparation.getValue();
+		convertedSeparation = selectedSeparation * 0.001;
 		txtSeparation.setText(df.format(selectedSeparation));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
