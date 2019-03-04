@@ -15,7 +15,11 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
+
 public class Main extends Application {
+	
+	@FXML
+	private LineChart<Number, Number> chtIntensity;
 	
 	public static void main(String[] args) {
 		Application.launch(Main.class, args);
@@ -35,19 +39,15 @@ public class Main extends Application {
 
 //		Aperture test_aperture = new DoubleSlit(5.00E-04, 6.33E-07, 1.0, 2.00E-03);
 //		Aperture test_aperture = new SingleSlit(5.00E-04, 6.33E-07, .8);
+
+		//CSV_writer writer = new CSV_writer(test_aperture.get_values());
+
 		Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
 		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
-		System.out.print(true);
-		CSV_writer writer = new CSV_writer(test_aperture.get_values());
 		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
-		
-		LineChart<Number, Number> test_plot = test_drawer.get_profile();
+		chtIntensity = test_drawer.get_profile();
 		
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 	}
-
-
-
-
 }

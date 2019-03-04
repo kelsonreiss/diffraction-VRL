@@ -28,7 +28,7 @@ public class Controller {
 	private LineChart<Number, Number> chtIntensity;
 	@FXML
 	private TextField txtSeparation, txtWidth, txtDistance;
-	@FXML
+		@FXML
 	private Pane apertureWindow, dPatternWindow, welcomeScreen;
 	@FXML
 	private TabPane tabWindow;
@@ -36,7 +36,6 @@ public class Controller {
 	private VisualAperture apertureGraph;
 	
 	private Aperture apertureInUse;
-
 	
 	@FXML
 	public void initialize() {
@@ -51,11 +50,8 @@ public class Controller {
 		slDistance.valueProperty().addListener((observable, oldValue, newValue) -> {
 			distanceChangedSlider();
 		});
-		
-		
 	}
 	
-
 	
 
 	private String selectedColor, slitType;
@@ -172,6 +168,7 @@ public class Controller {
 			txtDistance.setText(Double.toString(selectedDistance));
 		}
 	}
+
 	
 	protected void drawGraphs() {
 		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
@@ -212,6 +209,12 @@ public class Controller {
 	 */
 	protected void populateIntensity() {
 		
+		// Temporary code to test visual appearance of IntensityProfile
+		// Will be replaced with aperture values 
+		Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
+		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
+		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
+		chtIntensity = test_drawer.get_profile();
 	}
 	
 	/*
