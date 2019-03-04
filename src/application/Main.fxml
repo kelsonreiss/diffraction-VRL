@@ -104,7 +104,7 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
                                                             <TextField fx:id="txtSeparation" layoutX="138.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="5.0" />
                                                             <Button fx:id="btSeparation" layoutX="182.0" layoutY="85.0" mnemonicParsing="false" onAction="#separationChangedText" text="OK" />
                                                          </children>
@@ -120,7 +120,7 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slWidth" layoutX="12.0" layoutY="121.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="1.5" />
+                                                            <Slider fx:id="slWidth" layoutX="12.0" layoutY="121.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.5" />
                                                             <TextField fx:id="txtWidth" layoutX="139.0" layoutY="83.0" prefHeight="27.0" prefWidth="41.0" text="1.5" />
                                                             <Button fx:id="btWidth" layoutX="183.0" layoutY="83.0" mnemonicParsing="false" onAction="#widthChangedText" text="OK" />
                                                          </children>
@@ -136,7 +136,7 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slDistance" layoutX="12.0" layoutY="123.0" majorTickUnit="0.1" max="1.0" min="0.5" minorTickCount="0" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="0.7" />
+                                                            <Slider fx:id="slDistance" layoutX="12.0" layoutY="123.0" majorTickUnit="0.1" max="1.0" min="0.5" minorTickCount="0" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.7" />
                                                             <TextField fx:id="txtDistance" layoutX="140.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="0.7" />
                                                             <Button fx:id="btDistance" layoutX="184.0" layoutY="85.0" mnemonicParsing="false" onAction="#distanceChangedText" text="OK" />
                                                          </children>
@@ -182,7 +182,7 @@
                   </Tab>
               </tabs>
             </TabPane>
-            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;">
+            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;" visible="false">
                <children>
                   <Label layoutX="259.0" layoutY="199.0" text="Welcome" textFill="#fcfafa">
                      <font>

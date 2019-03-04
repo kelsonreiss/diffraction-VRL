@@ -106,9 +106,9 @@ public class VisualAperture {
 			g = 255;
 		}
 		
-		for (int i = 0; i < diffraction_values.size(); i++) {
+		for (int i = 0; i < diffraction_values.size(); i += 1) {
 			Pair<Double, Double> current = diffraction_values.get(i);
-			Line line = new Line(apertureDistance+1.5, yValueMid, _width, current.getKey()+yValueMid);
+			Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*100000+yValueMid);
 			line.setStroke(Color.rgb(r, g, b, current.getValue()));
 			parentContainer.getChildren().add(line);
 			
