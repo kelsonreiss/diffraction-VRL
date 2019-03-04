@@ -104,7 +104,7 @@
                                                                   <Font size="24.0" />
                                                                </font>
                                                             </Label>
-                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
+                                                            <Slider fx:id="slSeparation" blockIncrement="1.0" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
                                                             <TextField fx:id="txtSeparation" layoutX="138.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="5.0" />
                                                             <Button fx:id="btSeparation" layoutX="182.0" layoutY="85.0" mnemonicParsing="false" onAction="#separationChangedText" text="OK" />
                                                          </children>
@@ -182,7 +182,7 @@
                   </Tab>
               </tabs>
             </TabPane>
-            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;" visible="false">
+            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;">
                <children>
                   <Label layoutX="259.0" layoutY="199.0" text="Welcome" textFill="#fcfafa">
                      <font>
