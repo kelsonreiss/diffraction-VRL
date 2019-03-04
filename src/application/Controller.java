@@ -35,6 +35,8 @@ public class Controller {
 	
 	private VisualAperture apertureGraph;
 	
+	private DiffractionPatternDrawer dPatternDrawer;
+	
 	private Aperture apertureInUse;
 	
 	@FXML
@@ -77,6 +79,8 @@ public class Controller {
 		selectedWidth = WID_INIT;
 		selectedWavelength = WAV_INIT;
 		selectedDistance = DIS_INIT;
+		
+		// (TODO): Should this be wrapped with an if-else statement to determine which aperture to use?
 		Aperture apertureInUse = new SingleSlit(selectedWidth, selectedWavelength, selectedDistance);
 		drawGraphs();
 		welcomeScreen.setVisible(false);
@@ -173,6 +177,19 @@ public class Controller {
 	protected void drawGraphs() {
 		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
 		apertureGraph = new VisualAperture(apertureWindow, diff_values);
+		
+		// Create and retrieve intensity profile plot
+		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(diff_values);
+		chtIntensity = test_drawer.get_profile();
+		
+		// If first time generating diffraction pattern, create new drawer
+		if (dPatternDrawer == null) {
+			dPatternDrawer = new DiffractionPatternDrawer(dPatternWindow, selectedColor, diff_values);
+		} else {
+			// If pane has already been attached, update values
+			dPatternDrawer.updatePane(selectedColor, diff_values);
+		}
+		
 	}
 	
 	protected boolean inputValidator(String input, int valueType) {
@@ -205,7 +222,6 @@ public class Controller {
 	
 	/*
 	 * Populates the intensity graph
-	 * 
 	 */
 	protected void populateIntensity() {
 		
