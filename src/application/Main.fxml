@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -11,120 +10,185 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane prefHeight="600.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<Pane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <AnchorPane layoutY="-1.0">
+      <AnchorPane layoutY="-1.0" prefHeight="800.0" prefWidth="800.0">
          <children>
-            <TabPane prefHeight="600.0" prefWidth="620.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
                 <Tab text="Simulation">
                   <content>
-                    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="584.0" prefWidth="622.0">
+                    <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0">
                            <children>
-                              <VBox layoutY="-1.0" prefHeight="566.0" prefWidth="270.0" spacing="5.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="-1.0">
+                              <AnchorPane layoutY="-1.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="438.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <AnchorPane VBox.vgrow="ALWAYS">
+                                    <AnchorPane prefHeight="755.0" prefWidth="362.0">
                                        <children>
-                                          <HBox prefHeight="130.0" prefWidth="270.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <VBox spacing="5.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <Pane prefHeight="130.0" prefWidth="130.0" style="-fx-border-color: black;">
+                                                <AnchorPane prefHeight="143.0" prefWidth="352.0" VBox.vgrow="ALWAYS">
                                                    <children>
-                                                      <Label layoutX="37.0" layoutY="14.0" text="Slit Type" />
-                                                      <RadioButton fx:id="btSingle" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="Single" />
-                                                      <RadioButton fx:id="btDouble" layoutX="14.0" layoutY="74.0" mnemonicParsing="false" text="Double" />
+                                                      <HBox prefHeight="249.0" prefWidth="352.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Pane prefHeight="221.0" prefWidth="177.0" style="-fx-border-color: black;">
+                                                               <children>
+                                                                  <Label layoutX="32.0" layoutY="36.0" text="Slit Type">
+                                                                     <font>
+                                                                        <Font size="24.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <RadioButton fx:id="btSingle" layoutX="11.0" layoutY="87.0" mnemonicParsing="false" selected="true" text="Single">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="slitBts" />
+                                                                     </toggleGroup>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btDouble" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" text="Double" toggleGroup="$slitBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btDouble1" layoutX="11.0" layoutY="141.0" mnemonicParsing="false" text="Circular" toggleGroup="$slitBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </RadioButton>
+                                                               </children>
+                                                            </Pane>
+                                                            <Pane prefHeight="221.0" prefWidth="179.0" style="-fx-border-color: black;">
+                                                               <children>
+                                                                  <Label layoutX="46.0" layoutY="37.0" text="Color">
+                                                                     <font>
+                                                                        <Font size="24.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <RadioButton fx:id="btGreen" layoutX="15.0" layoutY="113.0" mnemonicParsing="false" text="Green">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="colorBts" />
+                                                                     </toggleGroup>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btRed" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" selected="true" text="Red" toggleGroup="$colorBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btBlue" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" text="Blue" toggleGroup="$colorBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </RadioButton>
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="139.0" prefWidth="352.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <Pane prefHeight="224.0" prefWidth="352.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label layoutX="62.0" layoutY="39.0" text="Slit Separation (mm)">
+                                                               <font>
+                                                                  <Font size="24.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Slider fx:id="slSeparation" layoutX="12.0" layoutY="129.0" majorTickUnit="1.0" max="10.0" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                                                            <TextField fx:id="txtSeparation" layoutX="138.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="5.0" />
+                                                            <Button fx:id="btSeparation" layoutX="182.0" layoutY="85.0" mnemonicParsing="false" onAction="#separationChangedText" text="OK" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label layoutX="85.0" layoutY="41.0" text="Slit Width (mm)">
+                                                               <font>
+                                                                  <Font size="24.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Slider fx:id="slWidth" layoutX="12.0" layoutY="121.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="1.5" />
+                                                            <TextField fx:id="txtWidth" layoutX="139.0" layoutY="83.0" prefHeight="27.0" prefWidth="41.0" text="1.5" />
+                                                            <Button fx:id="btWidth" layoutX="183.0" layoutY="83.0" mnemonicParsing="false" onAction="#widthChangedText" text="OK" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefWidth="352.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label layoutX="103.0" layoutY="42.0" text="Distance (m)">
+                                                               <font>
+                                                                  <Font size="24.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Slider fx:id="slDistance" layoutX="12.0" layoutY="123.0" majorTickUnit="0.1" max="1.0" min="0.5" minorTickCount="4" prefHeight="30.0" prefWidth="330.0" showTickLabels="true" showTickMarks="true" value="0.75" />
+                                                            <TextField fx:id="txtDistance" layoutX="140.0" layoutY="85.0" prefHeight="27.0" prefWidth="41.0" text="0.75" />
+                                                            <Button fx:id="btDistance" layoutX="184.0" layoutY="85.0" mnemonicParsing="false" onAction="#distanceChangedText" text="OK" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="357.0" prefWidth="429.0">
+                                       <children>
+                                          <VBox prefHeight="759.0" prefWidth="443.0" spacing="5.0">
+                                             <children>
+                                                <Pane prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
+                                                <Pane layoutX="10.0" layoutY="10.0" prefHeight="365.0" prefWidth="433.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <LineChart fx:id="chtIntensity" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="-1.0" prefHeight="351.0" prefWidth="433.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                        <xAxis>
+                                                          <NumberAxis fx:id="chtX" prefHeight="0.0" prefWidth="305.0" side="BOTTOM" tickLabelsVisible="false" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis fx:id="chtY" minorTickVisible="false" prefHeight="140.0" prefWidth="0.0" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                                                        </yAxis>
+                                                      </LineChart>
                                                    </children>
                                                 </Pane>
-                                                <Pane prefHeight="130.0" prefWidth="130.0" style="-fx-border-color: black;">
-                                                   <children>
-                                                      <Label layoutX="47.0" layoutY="14.0" text="Color" />
-                                                      <RadioButton fx:id="btGreen" layoutX="14.0" layoutY="64.0" mnemonicParsing="false" text="Green" />
-                                                      <RadioButton fx:id="btRed" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" text="Red" />
-                                                      <RadioButton fx:id="btBlue" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
-                                                   </children>
-                                                </Pane>
+                                                <Pane layoutX="10.0" layoutY="222.0" prefHeight="180.0" prefWidth="433.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
                                              </children>
-                                          </HBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <Label layoutX="67.0" layoutY="18.0" text="Slit Separation (mm)" />
-                                                <Slider layoutX="45.0" layoutY="79.0" prefHeight="15.0" prefWidth="170.0" />
-                                                <TextField layoutX="67.0" layoutY="46.0" prefHeight="27.0" prefWidth="74.0" />
-                                                <Button fx:id="btSeparation" layoutX="150.0" layoutY="46.0" mnemonicParsing="false" text="OK" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <Label layoutX="78.0" layoutY="18.0" text="Slit Width (mm)" />
-                                                <Slider layoutX="45.0" layoutY="79.0" prefWidth="170.0" />
-                                                <TextField layoutX="67.0" layoutY="46.0" prefHeight="27.0" prefWidth="74.0" />
-                                                <Button fx:id="btWidth" layoutX="150.0" layoutY="46.0" mnemonicParsing="false" text="OK" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Pane prefHeight="130.0" prefWidth="270.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <Label layoutX="82.0" layoutY="18.0" text="Distance (mm)" />
-                                                <Slider layoutX="45.0" layoutY="79.0" prefWidth="170.0" />
-                                                <TextField layoutX="67.0" layoutY="46.0" prefHeight="27.0" prefWidth="74.0" />
-                                                <Button fx:id="btDistance" layoutX="150.0" layoutY="46.0" mnemonicParsing="false" text="OK" />
-                                             </children>
-                                          </Pane>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
                                        </children>
                                     </AnchorPane>
                                  </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </VBox>
-                              <VBox layoutX="276.0" layoutY="-1.0" prefHeight="569.0" prefWidth="344.0" spacing="5.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
-                                 <children>
-                                    <Pane prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
-                                    <Pane layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="344.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <LineChart horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="-1.0" prefHeight="195.0" prefWidth="335.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
-                                            <xAxis>
-                                              <CategoryAxis gapStartAndEnd="false" prefHeight="0.0" prefWidth="305.0" side="BOTTOM" tickLabelsVisible="false" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis minorTickVisible="false" prefHeight="140.0" prefWidth="0.0" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
-                                            </yAxis>
-                                          </LineChart>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="10.0" layoutY="222.0" prefHeight="172.0" prefWidth="344.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </VBox>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Theory">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane prefHeight="800.0" prefWidth="800.0" />
                   </content>
                 </Tab>
                   <Tab text="About">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane />
                     </content>
                   </Tab>
               </tabs>
