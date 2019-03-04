@@ -46,9 +46,9 @@ public class DiffractionPatternDrawer {
 			
 			// For each color, multiply the intensity value by 255 to represent varying 
 			// degrees of diffraction with different shades 
-			if (color.equalsIgnoreCase("blue")) {
+			if (color == "blue") {
 				intensityLine.setStroke(Color.rgb(0, 0, (int) (diffraction_values.get(i).getValue() * 255)));
-			} else if (color.equalsIgnoreCase("red")) {
+			} else if (color == "red") {
 				intensityLine.setStroke(Color.rgb((int) (diffraction_values.get(i).getValue() * 255), 0,0));
 			} else {
 				intensityLine.setStroke(Color.rgb(0, (int) (diffraction_values.get(i).getValue() * 255),0));
@@ -56,9 +56,7 @@ public class DiffractionPatternDrawer {
 			
 			xPos += lineWidth;
 			diffractionPatternPane.getChildren().add(intensityLine);
-			
 		}
-		
 	}
 	
 }
