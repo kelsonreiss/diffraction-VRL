@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.util.Pair;
 import javafx.scene.*;
 import javafx.scene.chart.LineChart;
@@ -14,7 +15,7 @@ import javafx.event.ActionEvent;
 
 public class Controller {
 	@FXML
-	private Button btSeparation, btWidth, btDistance;
+	private Button btSeparation, btWidth, btDistance, startButton;
 	@FXML
 	private ToggleGroup colorBts, slitBts;
 	@FXML
@@ -27,6 +28,12 @@ public class Controller {
 	private LineChart<Number, Number> chtIntensity;
 	@FXML
 	private TextField txtSeparation, txtWidth, txtDistance;
+		@FXML
+	private Pane apertureWindow, dPatternWindow, welcomeScreen;
+	@FXML
+	private TabPane tabWindow;
+	
+	private VisualAperture apertureGraph;
 	
 	@FXML
 	public void initialize() {
@@ -57,6 +64,13 @@ public class Controller {
 	final double WID_MIN = 0.5;
 	final double DIS_MAX = 1;
 	final double DIS_MIN = 0.5;
+	
+	@FXML
+	protected void start(ActionEvent e) {
+		drawGraphs();
+		welcomeScreen.setVisible(false);
+		
+	}
 	/*
 	 * Updates display with the chosen color
 	 * 
@@ -142,6 +156,11 @@ public class Controller {
 		else {
 			txtDistance.setText(Double.toString(selectedDistance));
 		}
+	}
+
+	
+	protected void drawGraphs() {
+		apertureGraph = new VisualAperture(apertureWindow);
 	}
 	
 	protected boolean inputValidator(String input, int valueType) {
