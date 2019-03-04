@@ -28,6 +28,7 @@ public class Controller {
 	private LineChart<Number, Number> chtIntensity;
 	@FXML
 	private TextField txtSeparation, txtWidth, txtDistance;
+	
 	@FXML
 	private Pane apertureWindow, dPatternWindow, welcomeScreen, intensityWindow;
 	@FXML
@@ -36,6 +37,8 @@ public class Controller {
 	private VisualAperture apertureGraph;
 	
 	private DiffractionPatternDrawer dPatternDrawer;
+	
+	private IntensityProfileDrawer intensityPlotDrawer;
 	
 	private Aperture apertureInUse;
 	
@@ -86,6 +89,7 @@ public class Controller {
 		convertedWavelength = selectedWavelength * 0.000000001;
 		
 		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
+		// (TODO): Should this be wrapped with an if-else statement to determine which aperture to use?
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
@@ -186,9 +190,9 @@ public class Controller {
 	protected void drawGraphs() {
 		ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
 		apertureGraph = new VisualAperture(apertureWindow, diff_values);
+		
 		// Create and retrieve intensity profile plot
-		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(diff_values, chtIntensity, chtX, chtY);
-		//chtIntensity = test_drawer.get_profile();
+		intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow);
 		
 //		// If first time generating diffraction pattern, create new drawer
 		if (dPatternDrawer == null) {
@@ -226,19 +230,6 @@ public class Controller {
 			return false;
 		}
 		return false;
-	}
-	
-	/*
-	 * Populates the intensity graph
-	 */
-	protected void populateIntensity() {
-		
-		// Temporary code to test visual appearance of IntensityProfile
-		// Will be replaced with aperture values 
-		/*Aperture test_aperture = new CircularHole(5.00E-04, 6.33E-07, .8);
-		ArrayList<Pair<Double, Double>> test_values = test_aperture.get_values();
-		IntensityProfileDrawer test_drawer = new IntensityProfileDrawer(test_values);
-		chtIntensity = test_drawer.get_profile();*/
 	}
 	
 	/*
