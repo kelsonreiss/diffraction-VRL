@@ -9,6 +9,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -172,12 +174,51 @@
                   <content>
                     <AnchorPane prefHeight="800.0" prefWidth="800.0">
                            <children>
-                              <Label layoutX="6.0" layoutY="111.0" prefHeight="493.0" prefWidth="793.0" text="EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY " textOverrun="CLIP" wrapText="true" />
                               <Label layoutX="180.0" layoutY="36.0" text="What is diffraction?">
                                  <font>
                                     <Font size="48.0" />
                                  </font>
                               </Label>
+                              <ImageView fitHeight="233.0" fitWidth="354.0" layoutX="425.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.12.47%20AM.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="9.0" layoutY="96.0" prefHeight="360.0" prefWidth="395.0" text="Light, rather than being a single continuous ray, is an electromagnetic wave. When light passes through a slit or opening that is relatively large to its wavelength, it will appear as a single ray of light. However, if the slit is the same size or smaller than the light’s wavelength, the diffracting wave property will be evident. Light, rather than being a single continuous ray, is an electromagnetic wave. When light passes through a slit or opening that is relatively large to its wavelength, it will appear as a single ray of light. However, if the slit is the same size or smaller than the light’s wavelength, the diffracting wave property will be evident.&#10;&#10;The intensity pattern of a light’s wave effects is determined by the number of slits, the slit width, the light wavelength, and the distance from the aperture to the nearest surface. The intensity pattern of a light’s wave effects is determined by the number of slits, the slit width, the light wavelength, and the distance from the aperture to the nearest surface. " textOverrun="CLIP" wrapText="true" />
+                              <ImageView fitHeight="55.0" fitWidth="147.0" layoutX="152.0" layoutY="506.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.18.35%20AM.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="57.0" fitWidth="135.0" layoutX="260.0" layoutY="506.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.18.41%20AM.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="57.0" fitWidth="142.0" layoutX="152.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.18.51%20AM.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="76.0" fitWidth="237.0" layoutX="180.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.19.00%20AM.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="164.0" layoutY="468.0" text="Equations">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="525.0" text="Single Slit " />
+                              <Label layoutX="44.0" layoutY="606.0" text="Double Slit" />
+                              <Label layoutX="38.0" layoutY="688.0" text="Circular Hole" />
+                              <Label layoutX="298.0" layoutY="662.0" prefHeight="69.0" prefWidth="152.0" text="where β is the same &#10;as Single Slit and J &#10;is the Bessel function &#10;of first order" />
+                              <ImageView fitHeight="236.0" fitWidth="319.0" layoutX="462.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Screen%20Shot%202019-03-05%20at%2011.38.34%20AM.png" />
+                                 </image>
+                              </ImageView>
                            </children></AnchorPane>
                   </content>
                 </Tab>

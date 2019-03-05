@@ -87,7 +87,9 @@ public class Controller {
 		convertedWidth = selectedWidth * 0.001;
 		convertedWavelength = selectedWavelength * 0.000000001;
 		
-		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
+//		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
+		apertureInUse = new DoubleSlit(convertedWidth, convertedWavelength, selectedDistance, .002);
+		//apertureInUse = new CircularHole(convertedWidth, convertedWavelength, selectedDistance);
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
