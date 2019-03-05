@@ -72,10 +72,10 @@ public class Controller {
 	final double DIS_MIN = 0.5;
 	
 	final double WID_INIT = 1.5;
-	final double WAV_INIT = 700;
+	final double WAV_INIT = 7e-7;
 	final double DIS_INIT = 0.7;
-	final int SLIT_INIT = 1;
-	final String COL_INIT = "red";
+	final String SLIT_INIT = "Single";
+	final String COL_INIT = "Red";
 	
 	@FXML
 	protected void start(ActionEvent e) {
@@ -83,12 +83,12 @@ public class Controller {
 		selectedWavelength = WAV_INIT;
 		selectedDistance = DIS_INIT;
 		selectedColor = COL_INIT;
-		
+		slitType = SLIT_INIT;
 		convertedWidth = selectedWidth * 0.001;
-		convertedWavelength = selectedWavelength * 0.000000001;
+//		convertedWavelength = selectedWavelength * 0.000000001;
 		
-//		apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
-		apertureInUse = new DoubleSlit(convertedWidth, convertedWavelength, selectedDistance, .002);
+		apertureInUse = new SingleSlit(convertedWidth, selectedWavelength, selectedDistance);
+//		apertureInUse = new DoubleSlit(convertedWidth, convertedWavelength, selectedDistance, .002);
 		//apertureInUse = new CircularHole(convertedWidth, convertedWavelength, selectedDistance);
 		drawGraphs();
 		welcomeScreen.setVisible(false);
@@ -102,14 +102,14 @@ public class Controller {
 	protected void colorChanged(ActionEvent e) {
 		RadioButton selectedRadioButton = (RadioButton) colorBts.getSelectedToggle();
 		selectedColor = selectedRadioButton.getText();
-		simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 	}
 	
 	@FXML
 	protected void slitChanged(ActionEvent e) {
 		RadioButton selectedRadioButton = (RadioButton) slitBts.getSelectedToggle();
 		slitType = selectedRadioButton.getText();
-		simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 	}
 	
 
@@ -120,7 +120,7 @@ public class Controller {
 		txtSeparation.setText(df.format(selectedSeparation));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
-		simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+		simulate(selectedColor, slitType, convertedSeparation, convertedWidth, selectedDistance);
 	}
 	
 	@FXML
@@ -131,7 +131,7 @@ public class Controller {
 			selectedSeparation = Double.valueOf(tempSeparation);
 			convertedSeparation = selectedSeparation * 0.001;
 			slSeparation.setValue(selectedSeparation);
-			simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 		}
 		else {
 			txtSeparation.setText(Double.toString(selectedSeparation));
@@ -145,7 +145,7 @@ public class Controller {
 		txtWidth.setText(df.format(selectedWidth));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
-		simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 	}
 	
 	@FXML
@@ -156,7 +156,7 @@ public class Controller {
 			selectedWidth = Double.valueOf(tempWidth);
 			convertedWidth = selectedWidth * 0.001;
 			slWidth.setValue(selectedWidth);
-			simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 		}
 		else {
 			txtWidth.setText(Double.toString(selectedWidth));
@@ -169,7 +169,7 @@ public class Controller {
 		txtDistance.setText(df.format(selectedDistance));
 		
 		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
-		simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 	}
 	
 	@FXML
@@ -179,7 +179,7 @@ public class Controller {
 		if (inputValidator(tempDistance, txtChangeType)) {
 			selectedDistance = Double.valueOf(tempDistance);
 			slDistance.setValue(selectedDistance);
-			simulate(selectedColor, slitType, selectedSeparation, selectedWidth, selectedDistance);
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
 		}
 		else {
 			txtDistance.setText(Double.toString(selectedDistance));
@@ -237,6 +237,26 @@ public class Controller {
 	 */
 	protected void simulate(String color, String slit, double separation, double width, double distance) {
 		// Add graphic simulator functions in Aperture interface and do the same for Diffraction/Intensity class... or put all in one class
+		
+		// Convert color selection to appropriate wavelength value
+		if (color == "Red") {
+			selectedWavelength = 7e-7;
+		} else if (color == "Blue") {
+			selectedWavelength = 4.7e-7;
+		} else {
+			selectedWavelength = 5.3e-7;
+		}
+		
+		// Create appropriate experiment based on aperture selection
+		if (slit == "Single") {
+			apertureInUse = new SingleSlit(width, selectedWavelength, distance);
+		} else if (slit == "Double") {
+			apertureInUse = new DoubleSlit(width, selectedWavelength, distance, separation);
+		} else {
+			apertureInUse = new CircularHole(width, selectedWavelength, distance);
+		}
+		
+		drawGraphs();
 	}
 	
 }
