@@ -47,13 +47,33 @@ public class DiffractionPatternDrawer {
 			intensityLine.setStrokeWidth(lineWidth);
 			// For each color, multiply the intensity value by 255 to represent varying 
 			// degrees of diffraction with different shades 
+<<<<<<< HEAD
+			int r;
+			int g;
+			int b;
+			
+			if (color.equals("Blue")) {
+				r = 0;
+				g = 0;
+				b = 255;
+			} else if (color.equals("Red")) {
+				r = 255;
+				g = 0;
+				b = 0;
+=======
 			if (color == "Blue") {
 				intensityLine.setStroke(Color.rgb(0, 0, (int) (diffraction_values.get(i).getValue() * 255)));
 			} else if (color == "Red") {
 				intensityLine.setStroke(Color.rgb((int) (diffraction_values.get(i).getValue() * 255), 0,0));
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 			} else {
-				intensityLine.setStroke(Color.rgb(0, (int) (diffraction_values.get(i).getValue() * 255),0));
+				r = 0;
+				g = 255;
+				b = 0;
 			}
+			
+			intensityLine.setStroke(Color.rgb(r, g, b, diffraction_values.get(i).getValue()));
+			intensityLine.setStrokeWidth(0.1);
 			
 			xPos += lineWidth;
 			diffractionPatternPane.getChildren().add(intensityLine);

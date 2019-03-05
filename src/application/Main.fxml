@@ -44,23 +44,20 @@
                                                                         <Font size="24.0" />
                                                                      </font>
                                                                   </Label>
-                                                                  <RadioButton fx:id="btSingle" layoutX="11.0" layoutY="87.0" mnemonicParsing="false" selected="true" text="Single">
-                                                                     <font>
-                                                                        <Font size="15.0" />
-                                                                     </font>
-                                                                     <toggleGroup>
-                                                                        <ToggleGroup fx:id="slitBts" />
-                                                                     </toggleGroup>
-                                                                  </RadioButton>
-                                                                  <RadioButton fx:id="btDouble" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" text="Double" toggleGroup="$slitBts">
+                                                                  <RadioButton fx:id="btSingle" layoutX="11.0" layoutY="87.0" mnemonicParsing="false" onAction="#slitChanged" selected="true" text="Single">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btDouble1" layoutX="11.0" layoutY="141.0" mnemonicParsing="false" text="Circular" toggleGroup="$slitBts">
+                                                                  <RadioButton fx:id="btDouble" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" onAction="#slitChanged" text="Double" toggleGroup="$slitBts">
                                                                      <font>
                                                                         <Font size="15.0" />
-                                                                     </font>
+                                                                     </font>                                                                    
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btCircular" layoutX="11.0" layoutY="141.0" mnemonicParsing="false" onAction="#slitChanged" text="Circular" toggleGroup="$slitBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>                                                                 
                                                                   </RadioButton>
                                                                </children>
                                                             </Pane>
@@ -71,23 +68,20 @@
                                                                         <Font size="24.0" />
                                                                      </font>
                                                                   </Label>
-                                                                  <RadioButton fx:id="btGreen" layoutX="15.0" layoutY="113.0" mnemonicParsing="false" text="Green">
-                                                                     <font>
-                                                                        <Font size="15.0" />
-                                                                     </font>
-                                                                     <toggleGroup>
-                                                                        <ToggleGroup fx:id="colorBts" />
-                                                                     </toggleGroup>
-                                                                  </RadioButton>
-                                                                  <RadioButton fx:id="btRed" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" selected="true" text="Red" toggleGroup="$colorBts">
+                                                                  <RadioButton fx:id="btGreen" layoutX="15.0" layoutY="113.0" mnemonicParsing="false" onAction="#colorChanged" text="Green">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btBlue" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" text="Blue" toggleGroup="$colorBts">
+                                                                  <RadioButton fx:id="btRed" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" onAction="#colorChanged" selected="true" text="Red" toggleGroup="$colorBts">
                                                                      <font>
                                                                         <Font size="15.0" />
-                                                                     </font>
+                                                                     </font>                                                               
+                                                                  </RadioButton>
+                                                                  <RadioButton fx:id="btBlue" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" onAction="#colorChanged" text="Blue" toggleGroup="$colorBts">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>                                              
                                                                   </RadioButton>
                                                                </children>
                                                             </Pane>
