@@ -16,6 +16,7 @@ public class DoubleSlit extends Aperture{
                 // m here is MAX_DIFFRACTION_ORDER
                 ((.5 + MAX_DIFFRACTION_ORDER) * wavelength * screen_distance) / slit_width);
         this.slit_seperation = slit_seperation;
+        fill_diffraction_values();
     }
 
     /**
@@ -53,10 +54,14 @@ public class DoubleSlit extends Aperture{
      */
     @Override
     protected double calculate_intensity(double angle) {
-    	// If the angle is 0, intensity should be 1.0
     	
-        return 4 * Math.pow(Math.cos(calculate_beta(angle, slit_seperation)),2)
-                * calc_sinc_squared(calculate_beta(angle, 2 * slit_size));
+//        return (4 * Math.pow(Math.cos(calculate_beta(angle, slit_seperation)),2))
+//                * calc_sinc_squared(calculate_beta(angle, 2 * slit_size));
+    	
+    	
+    	// Equation given by Fraunhofer diffraction equation
+    	// https://en.wikipedia.org/wiki/Double-slit_experiment
+    	
+    	return Math.pow(Math.cos(calculate_beta(angle, slit_seperation)),2) * calc_sinc_squared(calculate_beta(angle, slit_size));
     }
 }
-

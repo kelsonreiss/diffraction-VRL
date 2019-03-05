@@ -8,7 +8,8 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -47,12 +48,12 @@
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btDouble" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" onAction="#slitChanged" text="Double" toggleGroup="$slitBts">
+                                                                  <RadioButton fx:id="btDouble" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" onAction="#slitChanged" text="Double">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>                                                                    
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btCircular" layoutX="11.0" layoutY="141.0" mnemonicParsing="false" onAction="#slitChanged" text="Circular" toggleGroup="$slitBts">
+                                                                  <RadioButton fx:id="btCircular" layoutX="11.0" layoutY="141.0" mnemonicParsing="false" onAction="#slitChanged" text="Circular">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>                                                                 
@@ -71,12 +72,12 @@
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btRed" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" onAction="#colorChanged" selected="true" text="Red" toggleGroup="$colorBts">
+                                                                  <RadioButton fx:id="btRed" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" onAction="#colorChanged" selected="true" text="Red">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>                                                               
                                                                   </RadioButton>
-                                                                  <RadioButton fx:id="btBlue" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" onAction="#colorChanged" text="Blue" toggleGroup="$colorBts">
+                                                                  <RadioButton fx:id="btBlue" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" onAction="#colorChanged" text="Blue">
                                                                      <font>
                                                                         <Font size="15.0" />
                                                                      </font>                                              
@@ -147,7 +148,7 @@
                                           <VBox prefHeight="759.0" prefWidth="443.0" spacing="5.0">
                                              <children>
                                                 <Pane fx:id="apertureWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="433.0" style="-fx-border-color: black;" />
-                                                <Pane fx:id="intensityWindow" layoutX="10.0" layoutY="10.0" prefHeight="365.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
+                                                <Pane fx:id="intensityWindow" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="433.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
                                                 <Pane fx:id="dPatternWindow" layoutX="10.0" layoutY="222.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
                                              </children>
                                              <padding>
@@ -166,12 +167,51 @@
                   <content>
                     <AnchorPane prefHeight="800.0" prefWidth="800.0">
                            <children>
-                              <Label layoutX="6.0" layoutY="111.0" prefHeight="493.0" prefWidth="793.0" text="EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY EXAMPLE THEORY " textOverrun="CLIP" wrapText="true" />
                               <Label layoutX="180.0" layoutY="36.0" text="What is diffraction?">
                                  <font>
                                     <Font size="48.0" />
                                  </font>
                               </Label>
+                              <ImageView fitHeight="233.0" fitWidth="354.0" layoutX="425.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/ray%20vs%20diffraction.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="9.0" layoutY="96.0" prefHeight="360.0" prefWidth="395.0" text="Light, rather than being a single continuous ray, is an electromagnetic wave. When light passes through a slit or opening that is relatively large to its wavelength, it will appear as a single ray of light. However, if the slit is the same size or smaller than the light’s wavelength, the diffracting wave property will be evident. Light, rather than being a single continuous ray, is an electromagnetic wave. When light passes through a slit or opening that is relatively large to its wavelength, it will appear as a single ray of light. However, if the slit is the same size or smaller than the light’s wavelength, the diffracting wave property will be evident.&#10;&#10;The intensity pattern of a light’s wave effects is determined by the number of slits, the slit width, the light wavelength, and the distance from the aperture to the nearest surface. The intensity pattern of a light’s wave effects is determined by the number of slits, the slit width, the light wavelength, and the distance from the aperture to the nearest surface. " textOverrun="CLIP" wrapText="true" />
+                              <ImageView fitHeight="55.0" fitWidth="147.0" layoutX="152.0" layoutY="506.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/single%20slit%20equation.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="57.0" fitWidth="135.0" layoutX="260.0" layoutY="506.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/single%20slit%20eq%20part%202.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="66.0" fitWidth="142.0" layoutX="152.0" layoutY="659.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/circular%20hole%20eq.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="108.0" fitWidth="259.0" layoutX="152.0" layoutY="553.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/double%20slit%20eq.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="164.0" layoutY="468.0" text="Equations">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="525.0" text="Single Slit " />
+                              <Label layoutX="44.0" layoutY="606.0" text="Double Slit" />
+                              <Label layoutX="38.0" layoutY="688.0" text="Circular Hole" />
+                              <Label layoutX="291.0" layoutY="660.0" prefHeight="71.0" prefWidth="159.0" text="where β is the same &#10;as Single Slit and J &#10;is the Bessel function &#10;of first order" textAlignment="CENTER" />
+                              <ImageView fitHeight="236.0" fitWidth="319.0" layoutX="462.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/slit%20images.png" />
+                                 </image>
+                              </ImageView>
                            </children></AnchorPane>
                   </content>
                 </Tab>
@@ -228,56 +268,56 @@
                   </Tab>
               </tabs>
             </TabPane>
-            <Pane fx:id="welcomeScreen" prefHeight="801.0" prefWidth="801.0" style="-fx-background-color: blue;">
-               <children>
-                  <Label layoutX="85.0" layoutY="209.0" text="Nolan Murphy" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="36.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="39.0" layoutY="106.0" text="Diffraction Simulator" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="72.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="249.0" layoutY="731.0" text="SLU Spring 2019 Software Engineering" textFill="WHITE">
-                     <font>
-                        <Font name="Arial" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="251.0" text="nolan.murphy@slu.edu" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="476.0" layoutY="251.0" text="kelson.reiss@slu.edu" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="486.0" layoutY="209.0" text="Kelson Reiss" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="36.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="319.0" layoutY="370.0" text="Version 1" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="36.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="startButton" layoutX="294.0" layoutY="543.0" mnemonicParsing="false" onAction="#start" text="Get Started">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="270.0" layoutY="425.0" prefHeight="27.0" prefWidth="270.0" text="Released March 4, 2019" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold Italic" size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
          </children>
       </AnchorPane>
+      <Pane fx:id="welcomeScreen" layoutX="-8.0" layoutY="-6.0" prefHeight="827.0" prefWidth="829.0" style="-fx-background-color: blue;">
+         <children>
+            <Label layoutX="85.0" layoutY="209.0" text="Nolan Murphy" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="106.0" text="Diffraction Simulator" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="72.0" />
+               </font>
+            </Label>
+            <Label layoutX="249.0" layoutY="731.0" text="SLU Spring 2019 Software Engineering" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="251.0" text="nolan.murphy@slu.edu" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="476.0" layoutY="251.0" text="kelson.reiss@slu.edu" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="486.0" layoutY="209.0" text="Kelson Reiss" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="319.0" layoutY="370.0" text="Version 1" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="startButton" layoutX="299.0" layoutY="543.0" mnemonicParsing="false" onAction="#start" text="Get Started">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Label layoutX="270.0" layoutY="425.0" prefHeight="27.0" prefWidth="270.0" text="Released March 4, 2019" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
-</Pane>
+  </Pane>

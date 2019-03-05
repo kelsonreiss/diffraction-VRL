@@ -27,10 +27,35 @@ public class IntensityProfileDrawer {
 	 */
 	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values, Pane parent) {
 		parent.getChildren().clear();
+		double parentWidth = parent.getWidth();
+		double parentHeight = parent.getHeight();
 		lineChart = new LineChart<Number, Number>(xAxis, yAxis);
+		
 		lineChart.setMaxWidth(parent.getWidth());
 		lineChart.setMaxHeight(parent.getHeight());
+		lineChart.getYAxis().setTickLabelsVisible(false);
+		lineChart.getXAxis().setTickLabelsVisible(false);
+		lineChart.setMinWidth(parent.getWidth());
+		lineChart.setMinHeight(parent.getHeight());
+		xAxis.setAutoRanging(false);
+		yAxis.setAutoRanging(false);
+		xAxis.setLowerBound(-0.005);
+		xAxis.setUpperBound(0.005);
+		yAxis.setLowerBound(0);
+		yAxis.setUpperBound(1);
 		lineChart.setLegendVisible(false);
+		lineChart.setHorizontalGridLinesVisible(false);
+		lineChart.setVerticalGridLinesVisible(false);
+		lineChart.setHorizontalZeroLineVisible(false);
+		lineChart.setVerticalZeroLineVisible(false);
+		//xAxis.setTickLabelsVisible(false);
+		//yAxis.setTickLabelsVisible(false);
+		xAxis.setTickMarkVisible(false);
+		yAxis.setTickMarkVisible(false);
+		lineChart.getYAxis().setTickLabelsVisible(false);
+		lineChart.getXAxis().setTickLabelsVisible(false);
+		lineChart.getXAxis().setOpacity(0);
+		lineChart.getYAxis().setOpacity(0);
 		XYChart.Series series = new XYChart.Series<>();
 		series.setName("data");
 		

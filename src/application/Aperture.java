@@ -53,8 +53,6 @@ public abstract class Aperture {
 
         calculate_minima();
         calculate_maxima();
-        fill_diffraction_values();
-        System.out.println(2);
     }
 
     /**
@@ -62,14 +60,13 @@ public abstract class Aperture {
      * Will calculate intensity for a number of x-values on the intensity profile
      * In the range [-border_x_value, border_x_value], incrementing by λ/(D*RESOLUTION_CONSTANT)
      */
-    private void fill_diffraction_values() {
+    protected void fill_diffraction_values() {
         // Fill diffraction values with (x,y) pairs representing coordinates and intensities
         // on a diffraction central-line intensity profile
         double increment = wavelength / (slit_size * RESOLUTION_CONSTANT);
         for (double i = -1 * border_x_value; i <= border_x_value; i += increment) {
             diffraction_values.add(new Pair<Double, Double>(i, calculate_intensity(i)));
         }
-        System.out.print("done");
     }
 
     /**
@@ -96,12 +93,11 @@ public abstract class Aperture {
      * Helper method that implements sinc trig function, which appears in several
      * calculations
      * sinc ^ 2(α) = (sin(α) / α) ^ 2
-     * @param angle
+     * @param value
      * @return
      */
-    protected double calc_sinc_squared(double angle){
-        double beta = calculate_beta(angle, slit_size );
-        return Math.pow((Math.sin(beta) / beta), 2);
+    protected double calc_sinc_squared(double value){
+        return Math.pow((Math.sin(value) / value), 2);
     }
 
     /**

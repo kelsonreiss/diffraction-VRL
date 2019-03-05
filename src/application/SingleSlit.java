@@ -17,6 +17,7 @@ public class SingleSlit extends Aperture{
         super(slit_width, screen_distance, wavelength,
                 // For a Single Slit Aperture, minima values calculated by = m*λ*L/D. m here is MAX_DIFFRACTION_ORDER
                 (MAX_DIFFRACTION_ORDER * wavelength * screen_distance) / slit_width);
+        fill_diffraction_values();
     }
 
     /**
@@ -52,6 +53,6 @@ public class SingleSlit extends Aperture{
      */
     @Override
     protected double calculate_intensity(double angle){
-        return super.calc_sinc_squared(angle);
+        return super.calc_sinc_squared(calculate_beta(angle, slit_size));
     }
 }

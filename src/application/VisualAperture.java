@@ -55,14 +55,14 @@ public class VisualAperture {
 		
 		Color c;
 		
-		if (color == "Red") {
+		if (color.equals("Red")) {
 			r = 255;
 			b = 0;
 			g = 0;
 			c = Color.RED;
 		}
 		
-		else if (color == "Blue") {
+		else if (color.equals("Blue")) {
 			r = 0;
 			b = 255;
 			g = 0;
@@ -105,7 +105,7 @@ public class VisualAperture {
 		for (int i = 0; i < diffraction_values.size(); i += 1) {
 			Pair<Double, Double> current = diffraction_values.get(i);
 			if (current.getValue() > 0) {
-				Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*100000+yValueMid);
+				Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*50000+yValueMid);
 				line.setStroke(Color.rgb(r, g, b, current.getValue()));
 				parentContainer.getChildren().add(line);
 			}
