@@ -100,20 +100,50 @@ public class Controller {
 		
 	}
 	
+<<<<<<< HEAD
     /**
 	 * Function which prepares selected values and calls drawGraphs with initial inputs set
      */
+=======
+	
+
+	private String selectedColor, slitType;
+	private double selectedSeparation, selectedWidth, selectedDistance, selectedWavelength, convertedWidth, convertedSeparation, convertedWavelength;
+	private int txtChangeType;
+	
+	private DecimalFormat df = new DecimalFormat("#.#");
+	
+	final double SEP_MAX = 10;
+	final double SEP_MIN = 0;
+	final double WID_MAX = 3;
+	final double WID_MIN = 0.5;
+	final double DIS_MAX = 1;
+	final double DIS_MIN = 0.5;
+	
+	final double WID_INIT = 1.5;
+	final double WAV_INIT = 7e-7;
+	final double DIS_INIT = 0.7;
+	final String SLIT_INIT = "Single";
+	final String COL_INIT = "Red";
+	
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	@FXML
 	protected void start() {
 		selectedWidth = WID_INIT;
 		selectedWavelength = WAV_INIT;
 		selectedDistance = DIS_INIT;
 		selectedColor = COL_INIT;
-		
+		slitType = SLIT_INIT;
 		convertedWidth = selectedWidth * 0.001;
-		convertedWavelength = selectedWavelength * 0.000000001;
+//		convertedWavelength = selectedWavelength * 0.000000001;
 		
+<<<<<<< HEAD
 		
+=======
+		apertureInUse = new SingleSlit(convertedWidth, selectedWavelength, selectedDistance);
+//		apertureInUse = new DoubleSlit(convertedWidth, convertedWavelength, selectedDistance, .002);
+		//apertureInUse = new CircularHole(convertedWidth, convertedWavelength, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 		drawGraphs();
 		welcomeScreen.setVisible(false);
 		
@@ -126,6 +156,7 @@ public class Controller {
 	protected void colorChanged() {
 		RadioButton selectedRadioButton = (RadioButton) colorBts.getSelectedToggle();
 		selectedColor = selectedRadioButton.getText();
+<<<<<<< HEAD
 		if (selectedColor.equals("Red")) {
 			selectedWavelength = 700;
 		}
@@ -137,6 +168,9 @@ public class Controller {
 		}
 		convertedWavelength = selectedWavelength * 0.000000001;
 		drawGraphs();
+=======
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	}
 	
 	
@@ -147,7 +181,11 @@ public class Controller {
 	protected void slitChanged() {
 		RadioButton selectedRadioButton = (RadioButton) slitBts.getSelectedToggle();
 		slitType = selectedRadioButton.getText();
+<<<<<<< HEAD
 		drawGraphs();
+=======
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	}
 	
 
@@ -158,7 +196,13 @@ public class Controller {
 		selectedSeparation = slSeparation.getValue();
 		convertedSeparation = selectedSeparation * 0.001;
 		txtSeparation.setText(df.format(selectedSeparation));
+<<<<<<< HEAD
 		drawGraphs();
+=======
+		
+		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
+		simulate(selectedColor, slitType, convertedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	}
 	
     /**
@@ -172,7 +216,11 @@ public class Controller {
 			selectedSeparation = Double.valueOf(tempSeparation);
 			convertedSeparation = selectedSeparation * 0.001;
 			slSeparation.setValue(selectedSeparation);
+<<<<<<< HEAD
 			drawGraphs();
+=======
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 		}
 		else {
 			txtSeparation.setText(Double.toString(selectedSeparation));
@@ -188,7 +236,12 @@ public class Controller {
 		
 		txtWidth.setText(df.format(selectedWidth));
 		
+<<<<<<< HEAD
 		drawGraphs();
+=======
+		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	}
 	
     /**
@@ -202,7 +255,11 @@ public class Controller {
 			selectedWidth = Double.valueOf(tempWidth);
 			convertedWidth = selectedWidth * 0.001;
 			slWidth.setValue(selectedWidth);
+<<<<<<< HEAD
 			drawGraphs();
+=======
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 		}
 		else {
 			txtWidth.setText(Double.toString(selectedWidth));
@@ -217,7 +274,12 @@ public class Controller {
 		selectedDistance = slDistance.getValue();
 		txtDistance.setText(df.format(selectedDistance));
 		
+<<<<<<< HEAD
 		drawGraphs();
+=======
+		//Add in functionality to tie value of input field to "OK" button, and dynamically adjust slider with change
+		simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	}
 	
     /**
@@ -230,7 +292,11 @@ public class Controller {
 		if (inputValidator(tempDistance, txtChangeType)) {
 			selectedDistance = Double.valueOf(tempDistance);
 			slDistance.setValue(selectedDistance);
+<<<<<<< HEAD
 			drawGraphs();
+=======
+			simulate(selectedColor, slitType, selectedSeparation, convertedWidth, selectedDistance);
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 		}
 		else {
 			txtDistance.setText(Double.toString(selectedDistance));
@@ -306,5 +372,35 @@ public class Controller {
 		}
 		return false;
 	}
+<<<<<<< HEAD
+=======
+	/*
+	 * Updates the simulation including aperture, intensity graph, and diffraction pattern
+	 * 
+	 */
+	protected void simulate(String color, String slit, double separation, double width, double distance) {
+		// Add graphic simulator functions in Aperture interface and do the same for Diffraction/Intensity class... or put all in one class
+		
+		// Convert color selection to appropriate wavelength value
+		if (color == "Red") {
+			selectedWavelength = 7e-7;
+		} else if (color == "Blue") {
+			selectedWavelength = 4.7e-7;
+		} else {
+			selectedWavelength = 5.3e-7;
+		}
+		
+		// Create appropriate experiment based on aperture selection
+		if (slit == "Single") {
+			apertureInUse = new SingleSlit(width, selectedWavelength, distance);
+		} else if (slit == "Double") {
+			apertureInUse = new DoubleSlit(width, selectedWavelength, distance, separation);
+		} else {
+			apertureInUse = new CircularHole(width, selectedWavelength, distance);
+		}
+		
+		drawGraphs();
+	}
+>>>>>>> branch 'master' of https://github.com/kpr404/diffraction-VRL.git
 	
 }
