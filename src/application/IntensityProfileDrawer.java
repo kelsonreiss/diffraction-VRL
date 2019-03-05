@@ -37,10 +37,6 @@ public class IntensityProfileDrawer {
 		lineChart.getXAxis().setTickLabelsVisible(false);
 		lineChart.setMinWidth(parent.getWidth());
 		lineChart.setMinHeight(parent.getHeight());
-		xAxis.setAutoRanging(false);
-		yAxis.setAutoRanging(false);
-		xAxis.setLowerBound(-0.005);
-		xAxis.setUpperBound(0.005);
 		yAxis.setLowerBound(0);
 		yAxis.setUpperBound(1);
 		lineChart.setLegendVisible(false);

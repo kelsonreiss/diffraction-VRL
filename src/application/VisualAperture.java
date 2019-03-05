@@ -76,7 +76,7 @@ public class VisualAperture {
 			c = Color.GREEN;
 		}
 		parentContainer.getChildren().clear();
-		apertureDistance = _width-distance*_width;
+		apertureDistance = _width-distance*_width+0.05*_width;
 
 		apertureLine = new Line(apertureDistance, apertureBottom, apertureDistance, apertureTop);
 		apertureLine.setStroke(Color.rgb(255,255,0, 0.6));
@@ -105,7 +105,7 @@ public class VisualAperture {
 		for (int i = 0; i < diffraction_values.size(); i += 1) {
 			Pair<Double, Double> current = diffraction_values.get(i);
 			if (current.getValue() > 0) {
-				Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*50000+yValueMid);
+				Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*75000+yValueMid);
 				line.setStroke(Color.rgb(r, g, b, current.getValue()));
 				parentContainer.getChildren().add(line);
 			}
