@@ -244,7 +244,7 @@ public class Controller {
 		if (init) {
 			apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
 			ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
-			intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow);
+			intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow, selectedColor);
 			apertureGraph = new VisualAperture(apertureWindow, diff_values, selectedDistance, selectedColor);
 			dPatternDrawer = new DiffractionPatternDrawer(dPatternWindow, selectedColor, diff_values);
 			init = false;
@@ -264,7 +264,7 @@ public class Controller {
 			}
 			ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
 			
-			intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow);
+			intensityPlotDrawer = new IntensityProfileDrawer(diff_values, intensityWindow, selectedColor);
 			
 			dPatternDrawer.updatePane(selectedColor, diff_values);
 			
