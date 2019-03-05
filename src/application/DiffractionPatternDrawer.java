@@ -34,16 +34,17 @@ public class DiffractionPatternDrawer {
 		diffractionPatternPane.getChildren().clear();
 		
 		// Width of each stroke depends on total number of values
-		double lineWidth = diffractionPatternPane.getWidth() 
+		double lineWidth = diffractionPatternPane.widthProperty().doubleValue()
 				/ diffraction_values.size();
 		
 		double xPos = 0;
+
 		Line intensityLine;
 		// Populate the pattern pane with lines
-		for (int i = 0; i < diffraction_values.size()-1; ++i) {
+		for (int i = 0; i < diffraction_values.size(); ++i) {
 			// Line height should match its container's height
-			intensityLine = new Line(xPos, diffractionPatternPane.getHeight(), xPos + lineWidth, 0);
-			
+			intensityLine = new Line(xPos, diffractionPatternPane.heightProperty().doubleValue(), xPos + lineWidth, 0);
+			intensityLine.setStrokeWidth(lineWidth);
 			// For each color, multiply the intensity value by 255 to represent varying 
 			// degrees of diffraction with different shades 
 			if (color == "blue") {
