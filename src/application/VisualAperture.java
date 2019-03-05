@@ -1,21 +1,11 @@
 package application;
 
-import javafx.fxml.FXML;
 
 import java.util.ArrayList;
-
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.*;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
-import javafx.event.ActionEvent;
-import javafx.stage.Stage;
 import javafx.util.Pair;
 
 public class VisualAperture {
@@ -34,7 +24,7 @@ public class VisualAperture {
 	private ArrayList<Pair<Double, Double>> diffraction_values;
 
 	
-	public VisualAperture(Pane parent, ArrayList<Pair<Double, Double>> values) {
+	public VisualAperture(Pane parent, ArrayList<Pair<Double, Double>> values, double apertureDistance, String laserColor) {
 		parentContainer = parent;
 		diffraction_values = values;
 		parentContainer.setStyle("-fx-background-color: #000000");
@@ -45,7 +35,7 @@ public class VisualAperture {
 		apertureTop = yValueMid-0.1*_height;
 		apertureBottom = yValueMid+0.1*_height;
 		
-		drawAperture(0.7, "red");
+		drawAperture(apertureDistance, laserColor);
 
 		
 		/*GraphicsContext gc = this.getGraphicsContext2D();
@@ -59,6 +49,32 @@ public class VisualAperture {
 	}
 	
 	public void drawAperture(double distance, String color) {
+		int r = 0;
+		int b = 0;
+		int g = 0;
+		
+		Color c;
+		
+		if (color == "Red") {
+			r = 255;
+			b = 0;
+			g = 0;
+			c = Color.RED;
+		}
+		
+		else if (color == "Blue") {
+			r = 0;
+			b = 255;
+			g = 0;
+			c = Color.BLUE;
+		}
+		
+		else {
+			r = 0;
+			b = 0;
+			g = 255;
+			c = Color.GREEN;
+		}
 		parentContainer.getChildren().clear();
 		apertureDistance = _width-distance*_width;
 
@@ -71,7 +87,7 @@ public class VisualAperture {
 		arrowEndYTop = yValue-0.02*_height;
 		arrowEndYBottom = yValue+0.02*_height;
 		arrow = new Polygon();
-		arrow.setFill(Color.rgb(255,0,0,1));
+		arrow.setFill(c);
 		arrow.getPoints().addAll(new Double[] {
 				arrowEndX, arrowEndYTop,
 				arrowEndX, arrowEndYBottom,
@@ -80,37 +96,20 @@ public class VisualAperture {
 		parentContainer.getChildren().add(arrow);
 		
 		lineToAperture = new Line(0, yValue, arrowEndX, yValue);
-		lineToAperture.setStroke(Color.rgb(255, 0, 0));
+		lineToAperture.setStroke(c);
 		lineToAperture.setStrokeWidth(2);
 		parentContainer.getChildren().add(lineToAperture);
 		
-		int r = 0;
-		int b = 0;
-		int g = 0;
-		
-		if (color == "red") {
-			r = 255;
-			b = 0;
-			g = 0;
-		}
-		
-		else if (color == "blue") {
-			r = 0;
-			b = 255;
-			g = 0;
-		}
-		
-		else if (color == "green") {
-			r = 0;
-			b = 0;
-			g = 255;
-		}
+
 		
 		for (int i = 0; i < diffraction_values.size(); i += 1) {
 			Pair<Double, Double> current = diffraction_values.get(i);
-			Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*100000+yValueMid);
-			line.setStroke(Color.rgb(r, g, b, current.getValue()));
-			parentContainer.getChildren().add(line);
+			if (current.getValue() > 0) {
+				Line line = new Line(apertureDistance+3, yValueMid, _width, current.getKey()*100000+yValueMid);
+				line.setStroke(Color.rgb(r, g, b, current.getValue()));
+				parentContainer.getChildren().add(line);
+			}
+			
 			
 			
 		} 
