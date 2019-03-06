@@ -1,6 +1,6 @@
 package application;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -25,16 +25,22 @@ public class IntensityProfileDrawer {
 	 * @param diffraction_values ArrayList of pairs, with each x value representing 
 	 * an angular location in radians and each y value is the intensity value
 	 */
-	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values, Pane parent) {
+	public IntensityProfileDrawer(ArrayList<Pair<Double, Double>> diffraction_values, Pane parent, String color) {
 		parent.getChildren().clear();
-		double parentWidth = parent.getWidth();
-		double parentHeight = parent.getHeight();
+		ArrayList<Double> diff_x = new ArrayList<Double>();
+		for (int i = 0; i < diffraction_values.size(); i++) {
+			diff_x.add(diffraction_values.get(i).getKey());
+		}
+		Double a[] = new Double[diff_x.size()];
+		diff_x.toArray(a);
+		Arrays.sort(a);
+		double bounds = a[0];
 		lineChart = new LineChart<Number, Number>(xAxis, yAxis);
 		
 		lineChart.setMaxWidth(parent.getWidth());
 		lineChart.setMaxHeight(parent.getHeight());
 		lineChart.getYAxis().setTickLabelsVisible(false);
-		lineChart.getXAxis().setTickLabelsVisible(false);
+		//lineChart.getXAxis().setTickLabelsVisible(false);
 		lineChart.setMinWidth(parent.getWidth());
 		lineChart.setMinHeight(parent.getHeight());
 		yAxis.setLowerBound(0);
@@ -42,16 +48,40 @@ public class IntensityProfileDrawer {
 		lineChart.setLegendVisible(false);
 		lineChart.setHorizontalGridLinesVisible(false);
 		lineChart.setVerticalGridLinesVisible(false);
-		lineChart.setHorizontalZeroLineVisible(false);
+		//lineChart.setHorizontalZeroLineVisible(false);
 		lineChart.setVerticalZeroLineVisible(false);
 		//xAxis.setTickLabelsVisible(false);
 		//yAxis.setTickLabelsVisible(false);
-		xAxis.setTickMarkVisible(false);
+		//xAxis.setTickMarkVisible(false);
 		yAxis.setTickMarkVisible(false);
-		lineChart.getYAxis().setTickLabelsVisible(false);
-		lineChart.getXAxis().setTickLabelsVisible(false);
-		lineChart.getXAxis().setOpacity(0);
+		//lineChart.getXAxis().setOpacity(0);
 		lineChart.getYAxis().setOpacity(0);
+		lineChart.setId("line");
+		
+		int r;
+		int g;
+		int b;
+		
+		if (color.equals("Red")) {
+			r = 255;
+			g = 0;
+			b = 0;
+		}
+		
+		else if (color.equals("Blue")) {
+			r = 0;
+			g = 0;
+			b = 255;
+		}
+		
+		else {
+			r = 0;
+			g = 255;
+			b = 0;
+			
+		}
+	    lineChart.setStyle( "CHART_COLOR_1: rgb(" + r + "," + g + "," + b + ");" );
+	    
 		XYChart.Series series = new XYChart.Series<>();
 		series.setName("data");
 		
