@@ -3,11 +3,14 @@ package application;
 import org.apache.commons.math3.special.BesselJ;
 
 /**
- * Class representing a circular hold diffraction experiment. Implements Aperture class, which contains
+ * Class representing a circular hole diffraction experiment. Implements Aperture class, which contains
  * behavior and data common in several experiments.
  */
 public class CircularHole extends Aperture {
 
+	/**
+	 * Circular aperture magnitudes different than SingleSlit and Double Slit
+	 */
     private static final double[] MAGNITUDES = {1.22, 2.23, 3.24, 4.24, 5.24};
 
     /**
@@ -38,6 +41,11 @@ public class CircularHole extends Aperture {
         return Math.pow(((2 * calculate_bessel(beta)) / beta), 2);
     }
 
+    /**
+     * Helper method to determine bessel value
+     * @param beta
+     * @return
+     */
     private double calculate_bessel(double beta) {
 		BesselJ bessel_calculator = new BesselJ(1);
 		// Call Bessel function on absolute value of beta 
