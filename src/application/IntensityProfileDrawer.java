@@ -94,23 +94,6 @@ public class IntensityProfileDrawer {
 		lineChart.getData().add(series);
 		lineChart.setCreateSymbols(false);
 		
-		// Code for changing color of line chart from 
-		// https://stackoverflow.com/questions/11153370/how-to-set-specific-color-to-javafx-xychart-series
-		int r = 0;
-		int g = 0;
-		int b = 0;
-		if (color.equals("Red")) {
-			r = 255;
-		} else if (color.equals("Blue")) {
-			b = 255;
-		} else {
-			g = 255;
-		}
-		
-		Node line = series.getNode().lookup(".chart-series-line");
-		String rgb = String.format("%d, %d, %d", r, g, b);
-		line.setStyle("-fx-stroke: rgba(" + rgb + ", 1.0);");
-		
 		parent.getChildren().add(lineChart);
 	}
 }
