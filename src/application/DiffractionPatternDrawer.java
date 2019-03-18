@@ -11,6 +11,7 @@ import javafx.util.Pair;
 
 /**
  * Helper class to draw the diffraction pattern representation
+ * Represented as a series of vertical lines, whose RGB values are determined by that location's intensity
  *
  */
 public class DiffractionPatternDrawer {
