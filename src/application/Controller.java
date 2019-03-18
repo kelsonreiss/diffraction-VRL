@@ -11,11 +11,13 @@ import javafx.util.Pair;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 
+/**
+ * Class to control the UI based on user interactions
+ */
 public class Controller {
+	//Instantiate FXML variables
 	@FXML
 	private Button btSeparation, btWidth, btDistance, startButton;
-
-
 	@FXML
 	private RadioButton btRed, btBlue, btGreen, btSingle, btDouble, btCircular;
 	@FXML
@@ -31,7 +33,7 @@ public class Controller {
 	@FXML
 	private TabPane tabWindow;
 	
-	//Initiate global custom class variables
+	//Initialize global custom class variables
 	private VisualAperture apertureGraph;
 	private DiffractionPatternDrawer dPatternDrawer;
 	private IntensityProfileDrawer intensityPlotDrawer;
@@ -69,10 +71,11 @@ public class Controller {
 
 	
     /**
-	 * Function which initializes listeners for the three sliders
+	 * Function which initializes listeners for the three sliders and toggle groups
      */
 	@FXML
 	public void initialize() {
+		//Initialize three sliders
 		slSeparation.valueProperty().addListener((observable, oldValue, newValue) -> {
 			separationChangedSlider();
 		});
@@ -85,6 +88,7 @@ public class Controller {
 			distanceChangedSlider();
 		});
 		
+		//Create toggle groups for radio buttons
 		colorBts = new ToggleGroup();
 		slitBts = new ToggleGroup();
 		
@@ -241,6 +245,7 @@ public class Controller {
 	 * Class which initializes the visualizations the first time it is called, and redraws them after
      */
 	protected void drawGraphs() {
+		//Initializes initial visualizations if it is the first time
 		if (init) {
 			apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);
 			ArrayList<Pair<Double, Double>> diff_values = apertureInUse.get_values();
@@ -251,7 +256,7 @@ public class Controller {
 			slitType = "Single";
 		}
 
-		
+		//Else creates a new type based on slit and updates graphs
 		else {
 			if (slitType.equals("Single")) {
 				apertureInUse = new SingleSlit(convertedWidth, convertedWavelength, selectedDistance);

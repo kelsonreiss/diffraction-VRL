@@ -8,22 +8,33 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.util.Pair;
 
+
+/**
+ * Helper class to draw the overhead view of the visual aperture
+ */
 public class VisualAperture {
 	
+	//Variables indicating the height and width of the parent container
 	private double _width;
 	private double _height;
 	
+	//Variables to represent different values for placement of aperture
 	private double yValueMid, yValue, apertureTop, apertureBottom, arrowEndX, arrowEndYTop, arrowEndYBottom, apertureDistance;
 
+	//Horizontal line going into aperture and vertical aperture line
 	private Line apertureLine, lineToAperture;
 	
+	//Arrow at end of lineToAperture
 	private Polygon arrow;
 	
+	//Parent pane
 	private Pane parentContainer;
 	
+	//Diffraction values for specified inputs
 	private ArrayList<Pair<Double, Double>> diffraction_values;
 
 	
+	//Instantiates initial graphic representation
 	public VisualAperture(Pane parent, ArrayList<Pair<Double, Double>> values, double apertureDistance, String laserColor) {
 		parentContainer = parent;
 		diffraction_values = values;
@@ -35,19 +46,12 @@ public class VisualAperture {
 		apertureTop = yValueMid-0.1*_height;
 		apertureBottom = yValueMid+0.1*_height;
 		
-		drawAperture(apertureDistance, laserColor);
-
-		
-		/*GraphicsContext gc = this.getGraphicsContext2D();
-		gc.setFill(Color.BLACK);
-		gc.setStroke(Color.rgb(72, 244, 66, 0.7));
-		gc.setLineWidth(5);
-		gc.strokeLine */
-		
-		
+		drawAperture(apertureDistance, laserColor);	
 		
 	}
 	
+	
+	//Draws the aperture with current diffraction_values
 	public void drawAperture(double distance, String color) {
 		int r = 0;
 		int b = 0;
@@ -55,6 +59,7 @@ public class VisualAperture {
 		
 		Color c;
 		
+		//Changes color based on input
 		if (color.equals("Red")) {
 			r = 255;
 			b = 0;

@@ -8,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.util.Pair;
 
+
 /**
  * Helper class to draw the diffraction pattern representation
  * Represented as a series of vertical lines, whose RGB values are determined by that location's intensity
@@ -22,6 +23,7 @@ public class DiffractionPatternDrawer {
 	 */
 	public DiffractionPatternDrawer(Pane parent, String color, ArrayList<Pair<Double, Double>> diffraction_values) {
 		this.diffractionPatternPane = parent;
+		diffractionPatternPane.setStyle("-fx-background-color: #000000");
 		updatePane(color, diffraction_values);
 	}
 	
@@ -66,10 +68,6 @@ public class DiffractionPatternDrawer {
 			
 			double opacity = diffraction_values.get(i).getValue();
 
-			
-			if (opacity > 1) {
-				opacity = 1;
-			}
 			intensityLine.setStroke(Color.rgb(r, g, b, opacity));
 			intensityLine.setStrokeWidth(lineWidth);
 			
